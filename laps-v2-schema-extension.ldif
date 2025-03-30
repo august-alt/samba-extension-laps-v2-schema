@@ -1,0 +1,109 @@
+dn: CN=ms-LAPS-PasswordExpirationTime,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: add
+objectClass: attributeSchema
+ldapDisplayName: msLAPS-PasswordExpirationTime
+adminDisplayName: ms-LAPS-PasswordExpirationTime
+adminDescription: This attribute contains a 64-bit integer that specifies the currently scheduled password expiration time in UTC
+attributeId: 1.2.840.113556.1.6.44.1.1
+attributeSyntax: 2.5.5.16
+omSyntax: 65
+isSingleValued: TRUE
+systemOnly: FALSE
+searchFlags: 0
+isMemberOfPartialAttributeSet: FALSE
+showInAdvancedViewOnly: FALSE
+
+dn: CN=ms-LAPS-Password,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: add
+objectClass: attributeSchema
+ldapDisplayName: msLAPS-Password
+adminDisplayName: ms-LAPS-Password
+adminDescription: This attribute contains a Unicode string that specifies the clear-text version of the current password and other information
+attributeId: 1.2.840.113556.1.6.44.1.2
+attributeSyntax: 2.5.5.5
+omSyntax: 19
+isSingleValued: TRUE
+systemOnly: FALSE
+searchFlags: 904
+isMemberOfPartialAttributeSet: FALSE
+showInAdvancedViewOnly: FALSE
+
+dn: CN=ms-LAPS-EncryptedPassword,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: add
+objectClass: attributeSchema
+ldapDisplayName: msLAPS-EncryptedPassword
+adminDisplayName: ms-LAPS-EncryptedPassword
+adminDescription: This attribute contains a byte string that contains an encrypted version of the current password
+attributeId: 1.2.840.113556.1.6.44.1.3
+attributeSyntax: 2.5.5.10
+omSyntax: 4
+isSingleValued: TRUE
+systemOnly: FALSE
+searchFlags: 904
+attributeSecurityGuid: f3531ec6-6330-4f8e-8d39-7a671fbac605
+isMemberOfPartialAttributeSet: FALSE
+showInAdvancedViewOnly: FALSE
+
+dn: CN=ms-LAPS-EncryptedPasswordHistory,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: add
+objectClass: attributeSchema
+ldapDisplayName: msLAPS-EncryptedPasswordHistory
+adminDisplayName: ms-LAPS-EncryptedPasswordHistory
+adminDescription: This attribute contains a multi-valued byte string. Each value contains an encrypted version of an earlier password
+attributeId: 1.2.840.113556.1.6.44.1.4
+attributeSyntax: 2.5.5.10
+omSyntax: 4
+isSingleValued: FALSE
+systemOnly: FALSE
+searchFlags: 904
+attributeSecurityGuid: f3531ec6-6330-4f8e-8d39-7a671fbac605
+isMemberOfPartialAttributeSet: FALSE
+showInAdvancedViewOnly: FALSE
+
+dn: CN=ms-LAPS-EncryptedDSRMPassword,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: add
+objectClass: attributeSchema
+ldapDisplayName: msLAPS-EncryptedDSRMPassword
+adminDisplayName: ms-LAPS-EncryptedDSRMPassword
+adminDescription: This attribute contains a byte string that contains an encrypted version of the current Directory Services Restore Mode (DSRM) account password
+attributeId: 1.2.840.113556.1.6.44.1.5
+attributeSyntax: 2.5.5.10
+omSyntax: 4
+isSingleValued: TRUE
+systemOnly: FALSE
+searchFlags: 904
+attributeSecurityGuid: f3531ec6-6330-4f8e-8d39-7a671fbac605
+isMemberOfPartialAttributeSet: FALSE
+showInAdvancedViewOnly: FALSE
+
+dn: CN=ms-LAPS-EncryptedDSRMPasswordHistory,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: add
+objectClass: attributeSchema
+ldapDisplayName: msLAPS-EncryptedDSRMPasswordHistory
+adminDisplayName: ms-LAPS-EncryptedDSRMPasswordHistory
+adminDescription: This attribute contains a multi-valued byte string. Each value contains an encrypted version of an earlier DSRM account password
+attributeId: 1.2.840.113556.1.6.44.1.6
+attributeSyntax: 2.5.5.10
+omSyntax: 4
+isSingleValued: FALSE
+systemOnly: FALSE
+searchFlags: 904
+attributeSecurityGuid: f3531ec6-6330-4f8e-8d39-7a671fbac605
+isMemberOfPartialAttributeSet: FALSE
+showInAdvancedViewOnly: FALSE
+
+dn: CN=ms-LAPS-CurrentPasswordVersion,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: add
+objectClass: attributeSchema
+ldapDisplayName: msLAPS-CurrentPasswordVersion
+adminDisplayName: ms-LAPS-CurrentPasswordVersion
+adminDescription: This attribute contains a binary GUID. The value represents the logical version of the most recently persisted password
+attributeId: 1.2.840.113556.1.6.44.1.7
+attributeSyntax: 2.5.5.10
+omSyntax: 4
+isSingleValued: TRUE
+systemOnly: FALSE
+searchFlags: 904
+attributeSecurityGuid: f3531ec6-6330-4f8e-8d39-7a671fbac605
+isMemberOfPartialAttributeSet: FALSE
+showInAdvancedViewOnly: FALSE

@@ -1,0 +1,10 @@
+dn: CN=computer,CN=Schema,cn=configuration,dc=mydomain,dc=lan
+changetype: Modify
+add: mayContain
+mayContain: msLAPS-PasswordExpirationTime
+mayContain: msLAPS-Password
+mayContain: msLAPS-EncryptedPassword
+mayContain: msLAPS-EncryptedPasswordHistory
+mayContain: msLAPS-EncryptedDSRMPassword
+mayContain: msLAPS-EncryptedDSRMPasswordHistory
+mayContain: msLAPS-CurrentPasswordVersion
