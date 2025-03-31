@@ -5,7 +5,7 @@ ARG USER_ID
 ARG GROUP_ID
 
 RUN apt-get update \
-    && apt-get install -y rpm-build gear ldb-tools \
+    && apt-get install -y rpm-build gear ldb-tools rpm-build-python3 \
     && export CURRENT_PWD=`pwd` \
     && groupadd --gid $GROUP_ID builder2 \
     && useradd --uid $USER_ID --gid $GROUP_ID -ms /bin/bash builder2 \

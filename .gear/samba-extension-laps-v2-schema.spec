@@ -13,6 +13,7 @@ Url: https://github.com/august-alt/samba-extension-laps-v2-schema
 
 BuildArch: noarch
 
+BuildRequires: rpm-build-python3
 Requires: ldb-tools
 
 Source0: %name-%version.tar
