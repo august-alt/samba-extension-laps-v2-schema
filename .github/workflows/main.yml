@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: docker build . --file Dockerfile --tag build-environment
+      - run: docker build . --file Dockerfile --tag build-environment --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g)
       - run: docker run -i --log-driver=none -a stdin -a stdout -a stderr -v "$(pwd)":/app build-environment
       - run: mkdir -p ./samba-container/packages && cp -r ./packages/*.rpm ./samba-container/packages/
       - run: docker build ./samba-container --file ./samba-container/Dockerfile --tag test-environment
-      - run: docker run -i --log-driver=none -a stdin -a stdout -a stderr -v "$(pwd)":/app test-environment
+      - run: docker run --privileged=true -i --log-driver=none -a stdin -a stdout -a stderr -v "$(pwd)":/app test-environment
