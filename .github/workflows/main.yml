@@ -11,3 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - run: docker build . --file Dockerfile --tag build-environment
       - run: docker run -i --log-driver=none -a stdin -a stdout -a stderr -v "$(pwd)":/app build-environment
+      - run: mkdir -p ./samba-container/packages && cp -r ./packages/*.rpm ./samba-container/packages/
+      - run: docker build ./samba-container --file ./samba-container/Dockerfile --tag test-environment
+      - run: docker run -i --log-driver=none -a stdin -a stdout -a stderr -v "$(pwd)":/app test-environment
