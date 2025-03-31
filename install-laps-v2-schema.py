@@ -6,8 +6,6 @@ import subprocess
 
 SRCDIR = "/usr/share/native-laps-schema/"
 TMPDIR = tempfile.mkdtemp(dir="/tmp")
-DOMAIN = "dc=domain,dc=alt"
-DESTDIR = "/usr/share/samba/setup/native-laps/"
 SAMFILE = "/var/lib/samba/private/sam.ldb"
 
 def update_files(srcdir, tempdir, domain_name):
@@ -43,8 +41,7 @@ def cleanup(tempdir):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--domain", default=DOMAIN, help="Domain name")
-    parser.add_argument("--destdir", default=DESTDIR, help="Destination directory")
+    parser.add_argument("--domain", help="Domain name")
     parser.add_argument("--samfile", default=SAMFILE, help="Location of samba's sam.ldb file")
     args = parser.parse_args()
 
@@ -52,7 +49,7 @@ def main():
     tempdir = TMPDIR
 
     update_files(srcdir, tempdir, args.domain)
-    install(args.destdir, args.samfile)
+    install(tempdir, args.samfile)
     cleanup(tempdir)
 
 if __name__ == "__main__":
