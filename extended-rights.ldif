@@ -1,4 +1,4 @@
-dn: CN=ms-LAPS-Encrypted-Password-Attributes,CN=Extended-Rights,cn=configuration,dc=mydomain,dc=lan
+dn: CN=msLAPS-Encrypted-Password-Attributes,CN=Extended-Rights,cn=configuration,dc=mydomain,dc=lan
 changetype: add
 objectClass: top
 objectClass: controlAccessRight
